@@ -1,0 +1,1 @@
+python tools/Davis_to_npy.py "E:\2025\event_flick_flare\datasets\DAVIS\test\full_sixFlare-2025_06_25_14_50_08.aedat4" --max_duration 1       

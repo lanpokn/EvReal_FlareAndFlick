@@ -24,6 +24,9 @@ color_error = chalk.red.bold
 color_scores = chalk.green.bold
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+import pathlib
+pathlib.PosixPath = pathlib.WindowsPath
+
 
 def get_eval_configs(eval_config_names):
     eval_configs = []

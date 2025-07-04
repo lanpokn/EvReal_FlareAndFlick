@@ -287,7 +287,9 @@ class MemMapDataset(Dataset):
     def compute_frame_indices(self):
         frame_indices = []
         start_idx = 0
+        # print(self.filehandle["image_event_indices"])
         for event_idx in self.filehandle["image_event_indices"]:
+            # print(event_idx)
             end_idx = event_idx[0]
             frame_indices.append([start_idx, end_idx])
             start_idx = end_idx
