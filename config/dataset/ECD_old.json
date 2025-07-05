@@ -39,3 +39,21 @@
         }
     }
 }
+
+
+{
+    "root_path": "data/DAVIS", 
+    "sequences": 
+    {
+        "peili1_sixflare-2025_06_26_20_24_03":
+        {
+            "start_time_s": 0,
+            "end_time_s": 10000.0
+        },
+        "full_sixFlare-2025_06_25_14_50_08":
+        {
+            "start_time_s": 0,
+            "end_time_s": 10000.0
+        }
+    }
+}

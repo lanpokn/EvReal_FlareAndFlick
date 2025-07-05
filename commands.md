@@ -4,7 +4,9 @@ python eval.py -m E2VID FireNet E2VID+ FireNet+ SPADE-E2VID SSL-E2VID ET-Net Hyp
 
 python eval.py -m E2VID FireNet E2VID+ FireNet+ SPADE-E2VID SSL-E2VID ET-Net HyperE2VID -c color -d CED -qm mse ssim lpips
 
+ python tools/make_video.py E:\2025\event_flick_flare\EVREAL-main\EVREAL-main\outputs\std\ECD\realCampus2_sixflare\SSL-E2VID  --output result.mp4  
 
+ 
 MSE,LPIPS:Lower is better, SSIM: higher is better
 MSE best:Firenet SSIM best E2VID+ LPIPS best FireNet
                DAVIS a single sequence
