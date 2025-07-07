@@ -30,7 +30,11 @@ def read_images_from_folder(folder):
     for ext in exts:
         files.extend(glob(os.path.join(folder, ext)))
     files = sorted(files)
+    i = 0
     for file in files:
+        if i==0:
+            i=1
+            continue
         img = cv2.imread(file)
         if img is not None:
             images.append(img)
@@ -67,9 +71,14 @@ def visualize_events_to_frames(events_xy, events_ts, events_p, resolution, dt=0.
     frames = []
 
     h, w = resolution
+    print("enter")
     for i in range(num_frames):
+        # if i>10100:
+        #     break
         t_start = i * dt
         t_end = (i + 1) * dt
+        # if i<10000:
+        #     continue
         mask = (events_ts >= t_start) & (events_ts < t_end)
         if not np.any(mask):
             frames.append(np.zeros((h, w, 3), dtype=np.uint8))
@@ -120,8 +129,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("input", help="Input path (folder or .npy)")
     parser.add_argument("--output", default="output.mp4", help="Output video path")
-    parser.add_argument("--fps", type=int, default=10, help="Video frame rate")
-    parser.add_argument("--dt", type=float, default=0.01, help="Time per event frame (for events only)")
+    parser.add_argument("--fps", type=int, default=30, help="Video frame rate")
+    parser.add_argument("--dt", type=float, default=0.001, help="Time per event frame (for events only)")
     args = parser.parse_args()
 
     process_input(args.input, args.output, fps=args.fps, event_dt=args.dt)

@@ -1,3 +1,4 @@
+#TODO:generate your own images.npy and so on
 import os
 import json
 import glob

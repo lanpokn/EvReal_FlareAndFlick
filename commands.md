@@ -6,6 +6,7 @@ python eval.py -m E2VID FireNet E2VID+ FireNet+ SPADE-E2VID SSL-E2VID ET-Net Hyp
 
  python tools/make_video.py E:\2025\event_flick_flare\EVREAL-main\EVREAL-main\outputs\std\ECD\realCampus2_sixflare\SSL-E2VID  --output result.mp4  
 
+python .\tools\MVSEC_to_npy.py "E:/2025/event_flick_flare/EVREAL-main/EVREAL-main/data/MVSEC/outdoor_night1_data.hdf5" --start_frame 1100 --end_frame 1220     
  
 MSE,LPIPS:Lower is better, SSIM: higher is better
 MSE best:Firenet SSIM best E2VID+ LPIPS best FireNet

@@ -23,7 +23,7 @@ def hdf5_to_npy(hdf5_path, output_pth, max_duration_sec=None, dt=0.1):
         y = ev['y'][:].astype(np.int32)
         p = ev['p'][:].astype(np.int8)
         ts = ev['t'][:].astype(np.float64) / 1e6  # 转秒
-    print(ts[0])
+    # print(ts[0])
     # 对齐时间，截断长度
     min_ts = ts.min() if ts.size else 0.0
     ts = ts - min_ts
@@ -38,8 +38,8 @@ def hdf5_to_npy(hdf5_path, output_pth, max_duration_sec=None, dt=0.1):
     # 生成黑色图像帧
     duration = events_ts[-1] if events_ts.size else 0.0
     n_frames = int(np.ceil((duration if max_duration_sec is None else min(duration, max_duration_sec)) / dt))
-    h = int(grp.attrs.get('height', 240))
-    w = int(grp.attrs.get('width', 304))
+    h = int(grp.attrs.get('height', 720))
+    w = int(grp.attrs.get('width', 1280))
 
     images = np.zeros((n_frames, h, w, 3), dtype=np.uint8)
     images_ts = np.arange(n_frames) * dt

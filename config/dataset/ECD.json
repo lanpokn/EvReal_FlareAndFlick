@@ -2,7 +2,7 @@
     "root_path": "data/EVK", 
     "sequences": 
     {
-        "realCampus2_sixflare":
+        "alllight_sixFlare_part_filterd":
         {
             "start_time_s": 0,
             "end_time_s": 10000.0
