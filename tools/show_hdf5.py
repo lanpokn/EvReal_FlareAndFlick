@@ -18,7 +18,19 @@ def explore_hdf5_structure(file_path):
         print(f"📂 Exploring HDF5 File: {file_path}")
         f.visititems(print_attrs)
 
+        data = f['dvs/data']
+
+        print(f"Dataset shape: {data.shape}")
+        print(f"Dataset dtype: {data.dtype}")
+
+        # 尝试读取前10条数据，看看结构
+        for i in range(10):
+            item = data[i]
+            print(f"Item {i}:")
+            for j, subitem in enumerate(item):
+                print(f"  subitem {j}: {subitem} (type: {type(subitem)})")
+
 if __name__ == "__main__":
     # 用法示例：python explore_hdf5.py path/to/your_file.h5
-    file_path = "E:/2025/event_flick_flare/EVREAL-main/EVREAL-main/data/MVSEC/outdoor_night1_data.hdf5"  # 可手动修改
+    file_path = "E:/2025/event_flick_flare/EVREAL-main/EVREAL-main/data/DDD20ITSC/rec1498946027.hdf5/rec1498946027.hdf5" # 可手动修改
     explore_hdf5_structure(file_path)
